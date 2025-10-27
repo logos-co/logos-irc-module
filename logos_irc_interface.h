@@ -3,7 +3,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QJsonArray>
 #include <QtCore/QStringList>
-#include "../../logos-liblogos/interface.h"
+#include "interface.h"
 
 class LogosIRCInterface : public PluginInterface
 {
