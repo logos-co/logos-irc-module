@@ -59,7 +59,8 @@
           logos-irc-module-lib = lib;
           logos-irc-module-include = include;
           example = example;
-          
+          lib = lib;
+
           # Default package (combined)
           default = combined;
         }
