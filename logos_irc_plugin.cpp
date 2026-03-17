@@ -72,15 +72,9 @@ bool LogosIRCPlugin::foo(const QString &bar)
         qWarning() << "LogosIRCPlugin: Token manager not available";
     }
     
-    // Trigger the event using LogosAPI client (like chat module does)
-    if (logosAPI) {
-        // print triggering signal
-        qDebug() << "LogosIRCPlugin: Triggering event 'fooTriggered' with data:" << eventData;
-        logosAPI->getClient("core_manager")->onEventResponse(this, "fooTriggered", eventData);
-        qDebug() << "LogosIRCPlugin: Event 'fooTriggered' triggered with data:" << eventData;
-    } else {
-        qWarning() << "LogosIRCPlugin: LogosAPI not available, cannot trigger event";
-    }
+    qDebug() << "LogosIRCPlugin: Triggering event 'fooTriggered' with data:" << eventData;
+    emit eventResponse("fooTriggered", eventData);
+    qDebug() << "LogosIRCPlugin: Event 'fooTriggered' triggered with data:" << eventData;
     
     return true;
 }
